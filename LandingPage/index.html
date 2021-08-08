@@ -15,11 +15,19 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
 
-    <script src="scripts/lib/react.development.js"></script>
-    <script src="scripts/lib/react-dom.development.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
     <script src="scripts/lib/material-ui-development.js"></script>
     <script src="scripts/lib/material-ui-lab.js"></script>
-    <script src="scripts/lib/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="scripts/views/Index.tsx"></script>
 
     <style>
       .loader {
@@ -58,6 +66,8 @@
     <div id="root">
       <div class="loader"></div>
     </div>
-    <script type="text/babel" src="./scripts/views/App.js"></script>
+    <script type="text/babel">
+      ReactDOM.render(<Index />, document.getElementById("root"));
+    </script>
   </body>
 </html>
