@@ -1,2 +1,5 @@
 # studious-parakeet
-studious-parakeet = client side only templates....for creative people in restrictive environments 
+
+studious-parakeet = client side only templates....for creative people in restrictive environments
+
+working idea
