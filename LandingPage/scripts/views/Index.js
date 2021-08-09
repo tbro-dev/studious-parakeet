@@ -12,25 +12,26 @@ import ProductCTA from './modules/views/ProductCTA';
 import AppAppBar from './modules/views/AppAppBar';
 import withRoot from './modules/withRoot';
 */
+const { ThemeProvider, CssBaseline, Typography } = MaterialUI;
+
+debugger;
 
 let Index = () => {
   return (
-    <>
-      test
-      {/* 
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <AppAppBar />
-      <ProductHero />
-      <ProductValues />
-      <ProductCategories />
-      <ProductHowItWorks />
-      <ProductCTA />
-      <ProductSmokingHero />
-      <AppFooter />
-    */}
-    </>
+      {/* 
+          <ProductHero />
+          <ProductValues />
+          <ProductCategories />
+          <ProductHowItWorks />
+          <ProductCTA />
+          <ProductSmokingHero />
+          <AppFooter />
+        */}
+    </ThemeProvider>
   );
 };
 
-//export default withRoot(Index);
-
-//ReactDOM.render(<Index />, document.getElementById("root"));
+ReactDOM.render(<Index />, document.getElementById("root"));

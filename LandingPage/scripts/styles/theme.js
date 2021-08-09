@@ -1,129 +1,105 @@
-const {
-    createMuiTheme,
-    makeStyles,
-} = MaterialUI;
+const { createMuiTheme } = MaterialUI;
+const { green, grey, red } = MaterialUI.colors;
 
-const lightColor = 'rgba(255, 255, 255, 0.7)';
-
-let theme = createMuiTheme({
-    palette: {
-        primary: {
-            light: '#63ccff',
-            main: '#005984',
-            dark: '#006db3',
-            subdue: '#3e446f',
-            darkTint: '#282828',
-        },
-        secondary: {
-            light: '#63ccff',
-            main: '#282828',
-            dark: '#006db3',
-        },
-        background: {
-            default: '#3e3e3e',
-        },
+const rawTheme = createMuiTheme({
+  palette: {
+    primary: {
+      light: "#69696a",
+      main: "#28282a",
+      dark: "#1e1e1f",
     },
-    typography: {
-        h5: {
-            fontWeight: 500,
-            fontSize: 26,
-            letterSpacing: 0.5,
-        },
+    secondary: {
+      light: "#fff5f8",
+      main: "#ff3366",
+      dark: "#e62958",
     },
-    shape: {
-        borderRadius: 8,
+    warning: {
+      main: "#ffc071",
+      dark: "#ffb25e",
     },
-    props: {
-        MuiTab: {
-            disableRipple: true,
-        },
+    error: {
+      light: red[50],
+      main: red[500],
+      dark: red[700],
     },
-    mixins: {
-        toolbar: {
-            minHeight: 48,
-        },
+    success: {
+      light: green[50],
+      main: green[500],
+      dark: green[700],
     },
+  },
+  typography: {
+    fontFamily: "'Work Sans', sans-serif",
+    fontSize: 14,
+    fontWeightLight: 300, // Work Sans
+    fontWeightRegular: 400, // Work Sans
+    fontWeightMedium: 700, // Roboto Condensed
+  },
 });
 
+const fontHeader = {
+  color: rawTheme.palette.text.primary,
+  fontWeight: rawTheme.typography.fontWeightMedium,
+  fontFamily: "'Roboto Condensed', sans-serif",
+  textTransform: "uppercase",
+};
 
-
-theme = {
-    ...theme,
-    overrides: {
-        MuiDrawer: {
-            paper: {
-                backgroundColor: '#262629',
-                color: '#dddddd',
-            },
-        },
-        MuiButton: {
-            label: {
-                textTransform: 'none',
-            },
-            contained: {
-                boxShadow: 'none',
-                '&:active': {
-                    boxShadow: 'none',
-                },
-            },
-        },
-        MuiTabs: {
-            root: {
-                marginLeft: theme.spacing(1),
-            },
-            indicator: {
-                height: 3,
-                borderTopLeftRadius: 3,
-                borderTopRightRadius: 3,
-                backgroundColor: '#f1f1f1',
-            },
-        },
-        MuiTab: {
-            root: {
-                textTransform: 'none',
-                margin: '0 16px',
-                minWidth: 0,
-                padding: 0,
-                [theme.breakpoints.up('md')]: {
-                    padding: 0,
-                    minWidth: 0,
-                },
-            },
-        },
-        MuiIconButton: {
-            root: {
-                padding: theme.spacing(1),
-            },
-        },
-        MuiTooltip: {
-            tooltip: {
-                borderRadius: 4,
-            },
-        },
-        MuiDivider: {
-            root: {
-                backgroundColor: '#404854',
-            },
-        },
-        MuiListItemText: {
-            primary: {
-                fontWeight: theme.typography.fontWeightMedium,
-            },
-        },
-        MuiListItemIcon: {
-            root: {
-                color: 'inherit',
-                marginRight: 0,
-                '& svg': {
-                    fontSize: 20,
-                },
-            },
-        },
-        MuiAvatar: {
-            root: {
-                width: 32,
-                height: 32,
-            },
-        },
+const theme = {
+  ...rawTheme,
+  palette: {
+    ...rawTheme.palette,
+    background: {
+      ...rawTheme.palette.background,
+      default: rawTheme.palette.common.white,
+      placeholder: grey[200],
     },
+  },
+  typography: {
+    ...rawTheme.typography,
+    fontHeader,
+    h1: {
+      ...rawTheme.typography.h1,
+      ...fontHeader,
+      letterSpacing: 0,
+      fontSize: 60,
+    },
+    h2: {
+      ...rawTheme.typography.h2,
+      ...fontHeader,
+      fontSize: 48,
+    },
+    h3: {
+      ...rawTheme.typography.h3,
+      ...fontHeader,
+      fontSize: 42,
+    },
+    h4: {
+      ...rawTheme.typography.h4,
+      ...fontHeader,
+      fontSize: 36,
+    },
+    h5: {
+      ...rawTheme.typography.h5,
+      fontSize: 20,
+      fontWeight: rawTheme.typography.fontWeightLight,
+    },
+    h6: {
+      ...rawTheme.typography.h6,
+      ...fontHeader,
+      fontSize: 18,
+    },
+    subtitle1: {
+      ...rawTheme.typography.subtitle1,
+      fontSize: 18,
+    },
+    body1: {
+      ...rawTheme.typography.body2,
+      fontWeight: rawTheme.typography.fontWeightRegular,
+      fontSize: 16,
+    },
+    body2: {
+      ...rawTheme.typography.body1,
+      fontSize: 14,
+    },
+  },
 };
