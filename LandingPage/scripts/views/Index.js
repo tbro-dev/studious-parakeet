@@ -14,15 +14,13 @@ import withRoot from './modules/withRoot';
 */
 const { ThemeProvider, CssBaseline, Typography } = MaterialUI;
 
-debugger;
-
 let Index = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppAppBar />
+      <ProductHero />
       {/* 
-          <ProductHero />
           <ProductValues />
           <ProductCategories />
           <ProductHowItWorks />
