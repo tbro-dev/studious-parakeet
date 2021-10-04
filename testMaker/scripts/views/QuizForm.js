@@ -4,7 +4,6 @@ const { connect } = ReactRedux;
 const { Field, FieldArray, reduxForm, formValueSelector } = ReduxForm;
 
 let QuizForm = ({ handleSubmit, pristine, reset, submitting }) => {
-
   return (
     <div className="QuizForm">
       <form name="quiz-form" onSubmit={handleSubmit}>
