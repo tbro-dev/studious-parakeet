@@ -1,10 +1,8 @@
-import { fade } from "@material-ui/core/styles/colorManipulator";
-import withTheme from "@material-ui/core/styles/withTheme";
-import { MTable } from "..";
-/* eslint-enable no-unused-vars */
 const {
   AppBar,
   Button,
+  fade,
+  withTheme,
   Box,
   Card,
   CardActions,
@@ -30,6 +28,7 @@ const {
   IconButton,
   TableCell,
 } = MaterialUI;
+
 class MTableEditCell extends React.Component {
   constructor(props) {
     super(props);
@@ -181,4 +180,4 @@ MTableEditCell.propTypes = {
   size: PropTypes.string,
 };
 
-export default withTheme(MTableEditCell);
+withTheme(MTableEditCell);
