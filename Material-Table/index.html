@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Proficiency Test Maker">
-  <title>Redux Forms</title>
+  <title>Material Table</title>
 
   <!-- Icons to support Material Design -->
   <link
@@ -22,6 +22,7 @@
   <script src="../_scripts/material-ui-lab.js"></script>
   <script src="../_scripts/babel.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.8.0/prop-types.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.js"></script>
   
   <!-- base lib's for quiz wizard using redux + react app's -->
   <script src="../_scripts/redux/redux.min.js"></script>
@@ -29,17 +30,28 @@
   <script src="../_scripts/redux/redux-form.min.js"></script>
   <script src="../_scripts/react-copy-to-clipboard.js"></script>
    
-  <script type="text/babel" src="scripts/styles/styles.js"></script>
+  <script type="text/babel" src="src/styles/styles.js"></script>
+
+  <!-- Material-Table -->
+  <script type="text/babel" src="src/components/m-table-action.js"></script>
+  <script type="text/babel" src="src/components/m-table-actions.js"></script>
+  <script type="text/babel" src="src/components/m-table-body-row.js"></script>
+  <script type="text/babel" src="src/components/m-table-body.js"></script>
+  <script type="text/babel" src="src/components/m-table-cell.js"></script>
+  
+  <!--Utilities -->
+  <script src="src/utils/common-values.js"></script>
+  <script src="src/utils/parseISO.js"></script>
 
   
   <!-- model components -->
 
   
   <!-- view components -->
-  <script type="text/babel" src="scripts/views/component/store.js"></script> 
+  <script type="text/babel" src="src/views/component/store.js"></script> 
 
   <!-- view modules-->
-  <script type="text/babel" src="scripts/views/QuizForm.js"></script>
+  <script type="text/babel" src="src/views/QuizForm.js"></script>
 
      <style>
       .loaderMaker {
@@ -96,6 +108,6 @@
           <div class="loaderMaker"></div>
     </div>
 
-      <script type="text/babel" src="scripts/views/App.js"></script>
+      <script type="text/babel" src="src/views/App.js"></script>
   </body>
 </html>
