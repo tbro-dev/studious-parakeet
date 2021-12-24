@@ -31,9 +31,9 @@ function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
 
-var _index = _interopRequireDefault(toInteger);
+var _indexParseISO = _interopRequireDefault(toInteger);
 
-var _index2 = _interopRequireDefault(requiredArgs);
+var _indexParseISO2 = _interopRequireDefault(requiredArgs);
 
 var MILLISECONDS_IN_HOUR = 3600000;
 var MILLISECONDS_IN_MINUTE = 60000;
@@ -106,12 +106,12 @@ var timezoneRegex = /^([+-])(\d{2})(?::?(\d{2}))?$/;
  */
 
 function parseISO(argument, dirtyOptions) {
-  (0, _index2.default)(1, arguments);
+  (0, _indexParseISO2.default)(1, arguments);
   var options = dirtyOptions || {};
   var additionalDigits =
     options.additionalDigits == null
       ? DEFAULT_ADDITIONAL_DIGITS
-      : (0, _index.default)(options.additionalDigits);
+      : (0, _indexParseISO.default)(options.additionalDigits);
 
   if (
     additionalDigits !== 2 &&

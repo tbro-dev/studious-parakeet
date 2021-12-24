@@ -1,14 +1,13 @@
 /*
-import eachDayOfInterval from "date-fns/eachDayOfInterval";
-
 import dateFnsParse from "date-fns/parse"; //this is parse in dateFns
 
-import parseISO from "date-fns/parseISO";
-import formatISO from "date-fns/formatISO";
 import isWithinInterval from "date-fns/isWithinInterval";
 import longFormatters from "date-fns/_lib/format/longFormatters";
 import defaultLocale from "date-fns/locale/en-US";
 */
+
+const dateFnsParse = dateFns.parse;
+
 const defaultFormats = {
   dayOfMonth: "d",
   fullDate: "PP",
