@@ -1,4 +1,4 @@
-export const byString = (o, s) => {
+const byString = (o, s) => {
   if (!s) {
     return;
   }
@@ -17,7 +17,7 @@ export const byString = (o, s) => {
   return o;
 };
 
-export const setByString = (obj, path, value) => {
+const setByString = (obj, path, value) => {
   var schema = obj; // a moving reference to internal objects within obj
 
   path = path.replace(/\[(\w+)\]/g, ".$1"); // convert indexes to properties
