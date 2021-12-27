@@ -1,6 +1,6 @@
 const getData = (_setLoadingMethod, _setDataMethod) => {
   setTimeout(function () {
-    _setDataMethod({ appColumns, appData, appTitle });
+    _setDataMethod({ appColumns, appData, appTitle, appOptions, appActions });
     _setLoadingMethod(false);
     console.log("No longer loading");
   }, 2000);
@@ -43,3 +43,21 @@ let appData = [
   },
 ];
 let appTitle = "Student Table";
+
+let appOptions = {
+  exportButton: true,
+};
+
+let appActions = [
+  {
+    disabled: true, //make false to allow onClick
+    hidden: true, //make false to reveal button
+    icon: "refresh",
+    tooltip: "Refresh Data",
+    isFreeAction: true,
+    onClick: () => {
+      //tableRef.current && tableRef.current.onQueryChange();
+      console.log("Clicked refresh");
+    },
+  },
+];
