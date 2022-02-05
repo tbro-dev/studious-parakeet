@@ -4,17 +4,16 @@ const getData = (_setLoadingMethod, _setDataMethod) => {
       appColumns,
       appData,
       appTitle,
-      appOptions,
       appActions,
       appIcons,
       appComponents,
       appDetailPanel,
       appEditable,
       appParent,
-      appSummary
+      appSummary,
     });
     _setLoadingMethod(false);
-    console.log('No longer loading');
+    console.log("No longer loading");
   }, 2000);
 };
 
@@ -34,77 +33,73 @@ const getData = (_setLoadingMethod, _setDataMethod) => {
 */
 
 let appColumns = [
-  { title: 'First Name', field: 'name' },
-  { title: 'Last Name', field: 'surname' },
-  { title: 'Year Born', field: 'birthYear' },
+  { title: "First Name", field: "name" },
+  { title: "Last Name", field: "surname" },
+  { title: "Year Born", field: "birthYear" },
   {
-    title: 'City of Bith',
-    field: 'birthCity',
-    lookup: { 34: 'Tacoma', 63: 'Seattle', 16: 'Renton', 05: 'Auburn' }
-  }
+    title: "City of Bith",
+    field: "birthCity",
+    lookup: { 34: "Tacoma", 63: "Seattle", 16: "Renton", 05: "Auburn" },
+  },
 ];
 let appData = [
   {
-    name: 'Sammy',
-    surname: 'Baran',
+    name: "Sammy",
+    surname: "Baran",
     birthYear: 1993,
-    birthCity: 63
+    birthCity: 63,
   },
   {
-    name: 'Michael',
-    surname: 'Banthe',
+    name: "Michael",
+    surname: "Banthe",
     birthYear: 1987,
-    birthCity: 34
+    birthCity: 34,
   },
   {
-    name: 'Lisa',
-    surname: 'Wetook',
+    name: "Lisa",
+    surname: "Wetook",
     birthYear: 1958,
-    birthCity: 16
+    birthCity: 16,
   },
   {
-    name: 'Michelle',
-    surname: 'Waterson',
+    name: "Michelle",
+    surname: "Waterson",
     birthYear: 1947,
-    birthCity: 05
+    birthCity: 05,
   },
   {
-    name: 'Michael',
-    surname: 'Banthe',
+    name: "Michael",
+    surname: "Banthe",
     birthYear: 1987,
-    birthCity: 34
+    birthCity: 34,
   },
   {
-    name: 'Lisa',
-    surname: 'Wetook',
+    name: "Lisa",
+    surname: "Wetook",
     birthYear: 1958,
-    birthCity: 16
+    birthCity: 16,
   },
   {
-    name: 'Michelle',
-    surname: 'Waterson',
+    name: "Michelle",
+    surname: "Waterson",
     birthYear: 1947,
-    birthCity: 05
-  }
+    birthCity: 05,
+  },
 ];
-let appTitle = 'Student Table';
-
-let appOptions = {
-  exportButton: true
-};
+let appTitle = "Student Table";
 
 let appActions = [
   {
     disabled: true, //make false to allow onClick
     hidden: true, //make false to reveal button
-    icon: 'refresh',
-    tooltip: 'Refresh Data',
+    icon: "refresh",
+    tooltip: "Refresh Data",
     isFreeAction: true,
     onClick: () => {
       //tableRef.current && tableRef.current.onQueryChange();
-      console.log('Clicked refresh');
-    }
-  }
+      console.log("Clicked refresh");
+    },
+  },
 ];
 
 let appIcons = null;
@@ -118,10 +113,10 @@ let appEditable = null;
 let appParent = null;
 
 let appSummary = ({ column, data }) =>
-  column.field === 'birthYear'
+  column.field === "birthYear"
     ? {
         value: data.reduce((agg, row) => agg + row.birthYear, 0),
-        style: { background: 'red' }
+        style: { background: "red" },
       }
     : undefined;
 
