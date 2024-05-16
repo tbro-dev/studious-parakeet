@@ -12,6 +12,9 @@ const {
 
 const {Redux, ReactRedux} = ReduxBundles;
 
+//remove objects within this namespace
+ReduxBundles = null;
+
 // Create a theme instance.
 const theme = createTheme({
     palette: {
