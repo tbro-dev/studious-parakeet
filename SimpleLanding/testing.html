@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Final Form with Material UI</title>
+    <!-- Load React, ReactDOM, and Material-UI from CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@material-ui/core/umd/material-ui.development.js"></script>
+    <!-- Load React Final Form and Final Form -->
+    <script src="https://unpkg.com/react-final-form/dist/react-final-form.umd.min.js"></script>
+    <script src="https://unpkg.com/final-form/dist/final-form.umd.min.js"></script>
+    <!-- Load Date Functions and Material-UI Pickers -->
+    <script src="https://unpkg.com/@date-io/date-fns@1.x"></script>
+    <script src="https://unpkg.com/@material-ui/pickers/dist/material-ui-pickers.umd.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        // Define your application in plain JavaScript
+        const {
+            Typography, Paper, Link, Grid, Button, CssBaseline, RadioGroup, FormLabel, 
+            MenuItem, FormGroup, FormControl, FormControlLabel, Checkbox, Radio, TextField, Select
+        } = MaterialUI;
+
+        const {
+            Form, Field
+        } = ReactFinalForm;
+
+        const {
+            MuiPickersUtilsProvider, DatePicker, TimePicker
+        } = MaterialUIPickers;
+
+        const { DateFnsUtils } = DateFns;
+
+        // Components rewritten to avoid JSX
+        function DatePickerWrapper(props) {
+            const { input, meta, ...rest } = props;
+            const { name, onChange, value, ...restInput } = input;
+            const showError = (meta.submitError && !meta.dirtySinceLastSubmit) || meta.error && meta.touched;
+            
+            return React.createElement(DatePicker, {
+                ...rest,
+                name: name,
+                helperText: showError ? meta.error || meta.submitError : undefined,
+                error: showError,
+                inputProps: restInput,
+                onChange: onChange,
+                value: value === '' ? null : value
+            });
+        }
+
+        function TimePickerWrapper(props) {
+            const { input, meta, ...rest } = props;
+            const { name, onChange, value, ...restInput } = input;
+            const showError = (meta.submitError && !meta.dirtySinceLastSubmit) || meta.error && meta.touched;
+            
+            return React.createElement(TimePicker, {
+                ...rest,
+                name: name,
+                helperText: showError ? meta.error || meta.submitError : undefined,
+                error: showError,
+                inputProps: restInput,
+                onChange: onChange,
+                value: value === '' ? null : value
+            });
+        }
+
+        function App() {
+            // Components need to be created using React.createElement instead of JSX
+            return React.createElement('div', { style: { padding: 16, margin: 'auto', maxWidth: 600 } }, 
+                React.createElement(CssBaseline),
+                React.createElement(Typography, { variant: 'h4', align: 'center', component: 'h1', gutterBottom: true }, '🏁 React Final Form'),
+                React.createElement(Typography, { variant: 'h5', align: 'center', component: 'h2', gutterBottom: true }, 'Material-UI Example'),
+                // Continue similarly for other components
+            );
+        }
+
+        ReactDOM.render(React.createElement(App), document.querySelector('#root'));
+    </script>
+</body>
+</html>

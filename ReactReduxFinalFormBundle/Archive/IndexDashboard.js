@@ -6,11 +6,9 @@ let Index = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Landing />
+      <Pricing />
     </ThemeProvider>
   );
 };
 
-const container = document.getElementById('root');
-const root = ReactDOM.createRoot(container);
-root.render(<Index />);
+ReactDOM.render(<Index />, document.getElementById("root"));
